@@ -2,30 +2,40 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    /* 1. 모바일에서 화면 크기에 맞게 자동 조절해주는 핵심 코드 */
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>HARICH - Global Business Design</title>
-<style>
-    /* 1. 스크롤이 가능하도록 설정 (overflow: hidden 제거) */
-    body, html { 
-        margin: 0; 
-        padding: 0; 
-        width: 100%; 
-        background-color: #000; 
-        /* overflow: hidden; <- 이 줄을 지우거나 주석 처리하세요 */
-    }
+    <style>
+        /* 2. 기본 여백 제거 및 스크롤 허용 */
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            width: 100%; 
+            background-color: #000; /* 배경은 깔끔하게 블랙 */
+        }
 
-    .bg-image {
-        width: 100%; /* 가로 너비는 브라우저에 맞춤 */
-        display: block; /* 이미지 아래 불필요한 공백 제거 */
-    }
+        /* 3. 이미지 설정: 가로는 화면에 꽉 차게, 세로는 비율대로(스크롤 생성) */
+        .main-visual {
+            width: 100%;
+            display: block;
+        }
 
-    img {
-        width: 100%; /* 이미지 가로를 100%로 */
-        height: auto; /* 세로는 이미지 비율에 맞춰 자동으로 (스크롤 생성) */
-    }
-</style>
+        img {
+            width: 100%;
+            height: auto; /* 이미지 원본 비율 유지 */
+            vertical-align: middle;
+        }
+
+        /* 4. 모바일 전용 추가 보정 (선택사항) */
+        @media (max-width: 768px) {
+            body {
+                background-color: #000; /* 모바일에서도 배경 일관성 유지 */
+            }
+        }
+    </style>
 </head>
 <body>
-    <img src="main1.JPG" alt="HARICH Main Visual">
+    /* 파일명이 main.jpg인지 main.JPG인지 다시 한번 꼭 확인하세요! */
+    <img src="main1.JPG" class="main-visual" alt="HARICH Business Design">
 </body>
 </html>
