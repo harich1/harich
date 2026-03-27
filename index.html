@@ -2,40 +2,32 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    /* 1. 모바일에서 화면 크기에 맞게 자동 조절해주는 핵심 코드 */
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>HARICH - Global Business Design</title>
     <style>
-        /* 2. 기본 여백 제거 및 스크롤 허용 */
+        /* 배경 및 기본 여백 초기화 */
         body, html { 
             margin: 0; 
             padding: 0; 
             width: 100%; 
-            background-color: #000; /* 배경은 깔끔하게 블랙 */
+            background-color: #000; 
         }
 
-        /* 3. 이미지 설정: 가로는 화면에 꽉 차게, 세로는 비율대로(스크롤 생성) */
-        .main-visual {
+        /* 이미지 가로 너비를 화면에 꽉 맞춤 */
+        picture img {
             width: 100%;
+            height: auto;
             display: block;
-        }
-
-        img {
-            width: 100%;
-            height: auto; /* 이미지 원본 비율 유지 */
-            vertical-align: middle;
-        }
-
-        /* 4. 모바일 전용 추가 보정 (선택사항) */
-        @media (max-width: 768px) {
-            body {
-                background-color: #000; /* 모바일에서도 배경 일관성 유지 */
-            }
         }
     </style>
 </head>
 <body>
-    /* 파일명이 main.jpg인지 main.JPG인지 다시 한번 꼭 확인하세요! */
-    <img src="main1.JPG" class="main-visual" alt="HARICH Business Design">
+
+    <picture>
+        <source srcset="main_mo.JPG" media="(max-width: 768px)">
+        
+        <img src="main1.JPG" alt="HARICH Business Design">
+    </picture>
+
 </body>
 </html>
